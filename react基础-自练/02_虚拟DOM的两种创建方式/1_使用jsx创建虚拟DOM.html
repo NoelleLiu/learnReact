@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_hello_react</title>
+  <style>
+    .title {
+      background-color: orange;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 准备容器 -->
+  <div id="test">
+
+  </div>
+  <!-- 引入react相关库，注意顺序，先引入react相关库 -->
+  <script src="../js/react.development.js"></script>
+  <script src="../js/react-dom.development.js"></script>
+  <script src="../js/babel.min.js"></script>
+  <!-- 引入本文件的jsx，注意type，不是jsx，babel表示使用babel将jsx转换为js的 -->
+  <script type="text/babel">
+    // 创建虚拟DOM
+    // const VDOM = <h1><span>Hello，React</span></h1>
+    // 注意双花括号：外层表示里面用js表达式 内层表示style是用对象的kv对进行表示
+    const myId = 'atguiGu'
+    const VDOM = (
+      <h2 className='title' id={myId.toLowerCase()}>
+        <span style={{color: 'red'}}>Hello，React</span>
+      </h2>
+    )
+    // 渲染虚拟DOM到页面上成为真实DOM
+    ReactDOM.render(VDOM, document.getElementById('test'))
+  </script>
+</body>
+</html>
